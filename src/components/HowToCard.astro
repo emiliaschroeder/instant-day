@@ -1,0 +1,10 @@
+---
+import Text from "./Text.astro"
+---
+
+<section class="border border-black p-5 text-[16px] md:text-[40px] md:p-10">
+   <h3 class="font-display"> <slot name="number"></slot> </h3>
+<Text>
+    <slot name="text"></slot>
+</Text>
+</section>
