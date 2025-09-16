@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
@@ -6,7 +6,14 @@
 @import "tailwindcss-intersect";
 
 @theme {
-  /* Her tilføjes theme variable // tokens */
+  /* FARVER */
+  --color-primary: #f4f3f0;
+  --color-secondary: #000000;
+
+  /* TYPOGRAFI */
+  --font-display: "Over the Rainbow", cursive;
+  --font-sans: "Montserrat", sans-serif;
+  --font-marker: "Permanent Marker", cursive;
 }
 
 @layer base {
@@ -19,9 +26,7 @@
   }
 }
 
-@layer components{
-
+@layer components {
 }
-@layer utilities{
-  
+@layer utilities {
 }
