@@ -6,17 +6,28 @@ import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
 import Text from '../components/Text.astro';
 import HowToCard from "../components/HowToCard.astro";
+import SectionDivider from '../components/SectionDivider.astro';
+import Heading from '../components/Heading.astro';
 ---
 <MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<Heading htmlheading="h2">
+  Mellem overskrift
+</Heading>
+
+<Heading style="h1">
+  overskrift
+</Heading>
+
+<Heading style="h2"> det her er en h2</Heading>
 
 	<Text>Brødtekst</Text>
 
+<!-- Default -->
+<SectionDivider />
+
+<!-- Flipped 180° -->
+<SectionDivider flipped={true} />
 
 	<section class="grid grid-cols-2 md:grid-cols-4 gap-6">
   <HowToCard>

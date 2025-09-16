@@ -1,0 +1,13 @@
+---
+const { flipped = false } = Astro.props;
+---
+
+<section
+  class={`flex flex-col w-full gap-2 pt-10 pb-10 md:gap-4 ${
+    flipped ? "rotate-180" : ""
+  }`}
+>
+  <div class="border-t border-black w-4/5"></div>
+  <div class="border-t border-black w-3/5"></div>
+  <div class="border-t border-black w-4/5"></div>
+</section>
