@@ -1,6 +1,42 @@
 ---
+import Heading from "../components/Heading.astro";
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
-</div>
-  
+
+<hr class="border-t-2 border-black w-full" />
+<article class="grid grid-cols-2">
+    <div>
+        <div class="p-8">
+            <Heading style="h1">Instant day</Heading>
+        </div>
+        <div class="max-w-xl mx-auto pl-6 pb-6">
+            <p class="font-sans uppercase italic font-bold text-xs">Suscribe to our newsletter here!</p>
+            <form class="flex">
+                <!-- Email input -->
+                <input type="email" placeholder="E-mail" class="w-3/4 px-4 py-3 focus:outline-none pl-2" />
+
+                <!-- Grøn knap -->
+                <button type="submit" class="bg-zinc-600 px-4 flex items-center justify-center border-l-0">
+                    <!-- Pil ikon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <div>
+            <nav>
+                <ul class="text-right p-3 space-y-3 text-xs pt-10">
+                    <li><a href="/" class="hover:underline italic font-bold">HOME</a></li>
+                    <li><a href="/share" class="hover:underline italic font-bold">SHARE YOUR INSTANCE</a></li>
+                    <li><a href="/gallery" class="hover:underline italic font-bold">WINNERS & NOMINEES</a></li>
+                    <li><a href="/info" class="hover:underline italic font-bold">INFO</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <img src="/top.svg" alt="Logo" class="w-8 h-8" />
+        </div>
+    </div>
+</article>
