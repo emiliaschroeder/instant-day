@@ -5,8 +5,48 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import Text from "../components/Text.astro";
+import Heading from "../components/Heading.astro";
+
+import SectionDivider from "../components/SectionDivider.astro";
 ---
 
 <MainLayout title="Titel">
-  <Text>Brødtekst</Text>
+  <!-- INFO -->
+  <section class="p-4 sm:p-8">
+    <Heading>Info</Heading>
+    <Heading stylingclasses="text-right"><span class="italic">Who</span> are <br />we?</Heading>
+    <p class="mt-2">
+      Instant Day is a small project run by a couple of lecturers from the Multimedia Design programme at EK - Business Academy Copenhagen. Instant Day is a bi-annual project where lecturers and students collaborate on a digital design and
+      communication project related to the Instant Day competition (this website). In essence, we just want to promote instant photography and have fun while doing it. Cheers.
+    </p>
+  </section>
+
+  <!-- Default -->
+  <SectionDivider />
+
+  <!-- JUDGES -->
+  <section class="p-4 sm:p-8">
+    <Heading><span class="italic">the</span> judges </Heading>
+    <p class="mb-2">Submissions will be reviewed by:</p>
+    <div class="flex flex-col md:flex-row md:gap-6 md:justify-center">
+      <div class="m-4 md:m-6 drop-shadow-xl">
+        <img src="teachers-screenshot.png" alt="Teachers at EK" class="w-full md:w-82 object-contain" />
+      </div>
+      <div class="m-4 md:m-6 drop-shadow-xl">
+        <img src="students-screenshot.png" alt="Students at EK" class="w-full md:w-82 object-contain" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Flipped 180° -->
+  <SectionDivider flipped={true} />
+
+  <!-- SPONSORS -->
+  <section class="p-4 sm:p-8">
+    <Heading><span class="italic">sponsors</span></Heading>
+    <p>Instant Day is not affiliated to any companies within the Instant Photography industry. The only organisation backing us is EK - Business Academy Copenhagen. At least so far;-)</p>
+    <div class="mt-4 ml-auto mr-4 w-fit">
+      <img src="ek-logo.png" alt="EK - Business Academy Copenhagen" class="w-24 md:w-32" />
+    </div>
+  </section>
 </MainLayout>
