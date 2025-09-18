@@ -5,12 +5,41 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import Text from "../components/Text.astro";
+import HowToCard from "../components/HowToCard.astro";
+import Heading from "../components/Heading.astro";
+import SectionDivider from "../components/SectionDivider.astro";
 ---
 
 <MainLayout title="Titel">
-  <article class="p-4">
-    <h2 class="font-sans text-3xl uppercase font-bold text-right pb-10 pr-6">Submit your instant</h2>
-    <form class="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+  <section class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8">
+    <HowToCard>
+      <span slot="number">1.</span>
+      <span slot="text">Take a photo of your instant with your smartphone (or scan it for max. quality) - the file should be between 2 - 10 MB, in jpg/jpeg or webp format.</span>
+    </HowToCard>
+
+    <HowToCard>
+      <span slot="number">2.</span>
+      <span slot="text">Upload your photo and credentials on share your instants</span>
+    </HowToCard>
+
+    <HowToCard>
+      <span slot="number">3.</span>
+      <span slot="text"
+        >Agree to our terms and conditions. <br />
+        <br />
+        The short version: Participants have to be 18+, portrayed persons must have given consent, and you agree that your instant can be exhibited and used to promote the photo contest.
+      </span>
+    </HowToCard>
+
+    <HowToCard>
+      <span slot="number">4.</span>
+      <span slot="text">You can make up to 5 submissions - go through step 1-3 for each submission;-)</span>
+    </HowToCard>
+  </section>
+  <SectionDivider />
+  <article class="p-8">
+    <Heading style="h2" stylingclasses="text-right pb-10 pr-6"><span class="italic">Submit</span> your instant</Heading>
+    <form class="pl-4 space-y-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
         <label for="antal" class="block pb-2">Full name</label>
         <input type="text" class="w-3/4 border-0 border-b-2 border-black bg-transparent focus:outline-none focus:border-black-500 p-2" />
@@ -20,8 +49,13 @@ import Text from "../components/Text.astro";
         <input type="email" class="w-3/4 border-0 border-b-2 border-black bg-transparent focus:outline-none focus:border-black-500 p-2" />
       </div>
       <div>
-        <label for="antal"></label>
-        <input type="file" />
+        <label for="file-upload" class="cursor-pointer flex items-center gap-2">
+          <!-- Skjul det rigtige file input -->
+          <input id="file-upload" type="file" class="hidden" />
+          <!-- Din SVG-knap -->
+          <img src="/upload.svg" alt="Upload" class="w-82 h-auto md:w-126" />
+          <span class="sr-only">Upload file</span>
+        </label>
       </div>
       <div>
         <label for="antal" class="block pb-2">Submission title</label>
@@ -29,8 +63,8 @@ import Text from "../components/Text.astro";
       </div>
       <div class="grid md:grid-cols-1">
         <div>
-          <label for="antal" class="pb-4">Submission description/story - describe the image and how you took it in a sentence or two.</label>
-          <textarea id="message" name="message" rows="1" cols="40" class="pt-6"></textarea>
+          <label for="antal" class="pb-4 mb-1 block">Submission description/story - describe the image and how you took it in a sentence or two. <br /></label>
+          <textarea id="message" name="message" rows="1" cols="40" class="pt-6 w-82 h-auto md:w-126"></textarea>
         </div>
         <div class="pt-6">
           <label>
@@ -41,43 +75,43 @@ import Text from "../components/Text.astro";
       </div>
     </form>
   </article>
-
-  <article class="p-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <h2 class="font-sans text-3xl uppercase font-bold pb-1">Terms & conditions</h2>
-      <p class="text-right pb-5">By participating in the contest,<br /> you accept the following terms and conditions</p>
+  <SectionDivider flipped={true} />
+  <article class="p-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+      <Heading style="h2"><span class="italic">Terms</span> & conditions </Heading>
+      <Text stylingclasses="md:text-right md:pt-12 md:pb-5">By participating in the contest,<br /> you accept the following terms and conditions</Text>
     </div>
     <div>
-      <h4 class="font-sans font-bold text-2xl text-right">Participation</h4>
-      <p class="text-right pb-10">The competition is open to all photographers, both amateurs and professionals, who are over 18 years old</p>
+      <Heading style="h4" stylingclasses="text-right italic">Participation</Heading>
+      <Text stylingclasses="text-right pb-10">The competition is open to all photographers, both amateurs and professionals, who are over 18 years old</Text>
     </div>
     <div>
-      <h4 class="font-sans font-bold text-2xl">Instant photo</h4>
-      <p class="pb-10">Every submission has to be an analogue instant photo - not a digital montage made in a photo editing suite. The instant can be made in various ways, with analogue instant cameras, digital instant cameras like ie. the Fujifilm EVO or scan-and-print tools like ie. the Polaroid Lab. The instant photo can be manipulated with analogue processes - the organizers encourage instant photography experiments. The submission can depict the instant photo in many ways: As a flat scan without or without the instant photo frame, as a photo showing the instants in a frame, on the wall etc. The instant doesn’t need to be just one photo: It can be a panorama or collage of multiple instants that make up one submission.</p>
+      <Heading stylingclasses="italic" style="h4">Instant photo</Heading>
+      <Text stylingclasses="pb-10">Every submission has to be an analogue instant photo - not a digital montage made in a photo editing suite. The instant can be made in various ways, with analogue instant cameras, digital instant cameras like ie. the Fujifilm EVO or scan-and-print tools like ie. the Polaroid Lab. The instant photo can be manipulated with analogue processes - the organizers encourage instant photography experiments. The submission can depict the instant photo in many ways: As a flat scan without or without the instant photo frame, as a photo showing the instants in a frame, on the wall etc. The instant doesn’t need to be just one photo: It can be a panorama or collage of multiple instants that make up one submission.</Text>
     </div>
     <div>
-      <h4 class="font-sans font-bold text-2xl text-right">Consent</h4>
-      <p class="text-right pb-10">It is prohibited to upload photographs of people who have not given consent to the publication of the image. Images of people in private or embarrassing situations, regardless of whether they are photographed in a public place, are not allowed.</p>
+      <Heading style="h4" stylingclasses="text-right italic">Consent</Heading>
+      <Text stylingclasses="text-right pb-10">It is prohibited to upload photographs of people who have not given consent to the publication of the image. Images of people in private or embarrassing situations, regardless of whether they are photographed in a public place, are not allowed.</Text>
     </div>
     <div>
-      <h4 class="font-sans font-bold text-2xl">Legal stuff</h4>
-      <p class="pb-10">The organizers reserve the right to disqualify any participant who violates these conditions. The organizers assume no responsibility for any loss, damage or injury that may arise as a result of participation in the competition or the use of prizes. Participants release the organizers from any claim, lawsuit or liability related to their participation in the competition.</p>
+      <Heading stylingclasses="italic" style="h4">Legal stuff</Heading>
+      <Text Stylingclassses="pb-10">The organizers reserve the right to disqualify any participant who violates these conditions. The organizers assume no responsibility for any loss, damage or injury that may arise as a result of participation in the competition or the use of prizes. Participants release the organizers from any claim, lawsuit or liability related to their participation in the competition.</Text>
     </div>
     <div>
-      <h4 class="font-sans font-bold text-2xl text-right">Number of submissions</h4>
-      <p class="text-right pb-10">You can enter the competition with a total of five submissions</p>
+      <Heading style="h4" stylingclasses="text-right italic">Number of submissions</Heading>
+      <Text stylingclasses="text-right pb-10">You can enter the competition with a total of five submissions</Text>
     </div>
     <div>
-      <h4 class="font-sans font-bold text-2xl">Usage rights</h4>
-      <p class="pb-10">By submitting one or more images and thereby participating in the competition, you agree that the image may be used for the promotion of the photo competition and possibly in physical exhibition spaces afterwards. The organizers will credit the participants wherever practical and reasonably possible.</p>
+      <Heading stylingclasses="italic" style="h4">Usage rights</Heading>
+      <Text Stylingclasses="pb-10">By submitting one or more images and thereby participating in the competition, you agree that the image may be used for the promotion of the photo competition and possibly in physical exhibition spaces afterwards. The organizers will credit the participants wherever practical and reasonably possible.</Text>
     </div>
     <div>
-      <h4 class="font-sans font-bold text-2xl text-right">Copyright</h4>
-      <p class="text-right pb-10">You must be the author of the submitted instants and have the rights to publish them. The instants must be free of third party rights. Participants retain all copyright in their submitted instants. By submitting instants to the competition, participants grant the organizers a non-exclusive license to use, reproduce and publish the submitted images in connection with the promotion of the competition, including on social media platforms, websites and printed materials. The organizers will credit the participants wherever practical and reasonable.</p>
+      <Heading style="h4" stylingclasses="text-right italic">Copyright</Heading>
+      <Text stylingclasses="text-right pb-10">You must be the author of the submitted instants and have the rights to publish them. The instants must be free of third party rights. Participants retain all copyright in their submitted instants. By submitting instants to the competition, participants grant the organizers a non-exclusive license to use, reproduce and publish the submitted images in connection with the promotion of the competition, including on social media platforms, websites and printed materials. The organizers will credit the participants wherever practical and reasonable.</Text>
     </div>
     <div>
-      <h4 class="font-sans font-bold text-2xl">Announcement of Winners</h4>
-      <p class="pb-10">The winners of the competition will be announced on the official website and/or social media platforms of the organizers. By participating in the competition, the winners consent to the publication of their names and submitted photos for promotional purposes.</p>
+      <Heading stylingclasses="italic" style="h4">Announcement of Winners</Heading>
+      <Text stylingclasses="pb-10">The winners of the competition will be announced on the official website and/or social media platforms of the organizers. By participating in the competition, the winners consent to the publication of their names and submitted photos for promotional purposes.</Text>
     </div>
   </article>
 </MainLayout>
