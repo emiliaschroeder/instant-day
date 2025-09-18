@@ -9,46 +9,162 @@ import HowToCard from "../components/HowToCard.astro";
 import SectionDivider from '../components/SectionDivider.astro';
 import Heading from '../components/Heading.astro';
 ---
+
 <MainLayout title="Titel">
+	<section>
+<div style="position: relative; display: inline-block;">
+  <!-- Heading behind the image -->
+  <Heading
+    style="h1"
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 text-center"
+  >
+    instant day
+  </Heading>
+  
+  <img src="/index-top.png" alt="" class="max-w-50 md:max-w-100 relative block z-10"/>
 
-<Heading htmlheading="h2">
-  Mellem overskrift
-</Heading>
+  <!-- Heading on top of the image -->
+  <Heading
+    style="h1"
+    class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center z-20"
+  >
+    instant day
+  </Heading>
+</div>
 
-<Heading style="h1">
-  overskrift
-</Heading>
+<div>
+	 <Text>Join us on October 18 for Instant Day, a celebration of instant photography! </Text>
+</div>
+	</section>
 
-<Heading style="h2"> det her er en h2</Heading>
 
-	<Text>Brødtekst</Text>
+
+	<section class="grid grid-cols-1 mx-10 md:grid-cols-2 md:mx-20">
+		<Heading style="h2">What is Instant Day?</Heading>
+		<Text>October 18 is Instant Day - a day all about celebrating instant photography. So get out your Polaroid, Instax or whatever instant photography camera you are using, and show us your instants. Instant Day isn’t really a photo competition, it’s more a homage to good old analogue, instant photography - everybody who participates are winners:-) But: We do have a nice prize for one lucky instant photographer!</Text>
+	</section>
 
 <!-- Default -->
 <SectionDivider />
 
+<section class="grid grid-cols-1 md:grid-cols-2 mx-10 md:mx-20 md:gap-20">
+	<div class="md:order-2 text-right">
+	<Heading style="h2">Why instant Photograp- <br>hy?</Heading>
+	</div>
+	<div class="md:order-1">
+	<Text>Instant Photography is a testament to life: It all started back in the 1940’s with a 3 year old kid. She wanted to see her fathers images right away. The father, Edwin Land, embarked on a mission: To invent instant photography. Half a decade later, Edwin Land launched Instant photography and established the Polaroid brand. Instant photography turned into big business in the 70’s and 80’s, until the digital era almost killed the industry. The massive amount of time wasted on the small screens have spurred a counterreaction: Analogue, off-line experiences have become popular again. And instant photography is just that: An analogue, life-affirming and tactile photography experience. So let’s celebrate life, and make memories:-) </Text>
+</div>
+</section>
+
 <!-- Flipped 180° -->
 <SectionDivider flipped={true} />
 
-	<section class="grid grid-cols-2 md:grid-cols-4 gap-6">
-  <HowToCard>
+<!-- HOW TO PARTICIPATE -->
+<section class="mx-10 md:mx-20 pb-2 md:pb-15">
+	<div class="grid grid-cols-1 md:grid-cols-4 pb-5 md:pb-10">
+		<div class="md:col-span-3">
+	<Heading style="h2">How to participate</Heading>
+	</div>
+	<div class="md:col-span-1">
+		<Text>So: Got an instant photo ready for the public? In order to take part in Instant Day: </Text>
+	</div>
+	</div>
+
+		<section class="grid grid-cols-2 md:grid-cols-4 gap-6">
+  <HowToCard class="h-full">
     <span slot="number">1.</span>
     <span slot="text">Take a photo of your instant with your smartphone (or scan it for max. quality) - the file should be between 2 - 10 MB, in jpg/jpeg or webp format.</span>
   </HowToCard>
 
-  <HowToCard>
+  <div class="h-full">
+    <img src="/02-amager-forbraending-instaxsquare-01 2.png" 
+         alt="" 
+         class="w-full h-full object-cover rounded-lg" />
+  </div>
+
+  <HowToCard class="h-full">
     <span slot="number">2.</span>
     <span slot="text">Upload your photo and credentials on share your instants</span>
   </HowToCard>
 
-  <HowToCard>
+  <div class="h-full">
+    <img src="/05-dobbelt-exp-orestad-index.png" 
+         alt="" 
+         class="w-full h-full object-cover rounded-lg" />
+  </div>
+
+  <HowToCard class="h-full">
     <span slot="number">3.</span>
-    <span slot="text">Agree to our terms and conditions. <br> <br>
-The short version: Participants have to be 18+, portrayed persons must have given consent, and you agree that your instant can be exhibited and used to promote the photo contest. </span>
+    <span slot="text">Agree to our terms and conditions. <br>
+    The short version: Participants have to be 18+, portrayed persons must have given consent.
+    </span>
   </HowToCard>
 
-   <HowToCard>
+  <HowToCard class="h-full">
     <span slot="number">4.</span>
-    <span slot="text">You can make up to 5 submissions - go through step 1-3 for each submission;-)</HowToCard>
+    <span slot="text">You can make up to 5 submissions - go through step 1-3 for each submission ;-)
+    </span>
+  </HowToCard>
+
+  <div class="h-full">
+    <img src="/06-loserup-strand-04-menu.png" 
+         alt="" 
+         class="w-full h-full object-cover rounded-lg" />
+  </div>
+
+  <div class="h-full">
+    <img src="/share-cta.png" 
+         alt="" 
+         class="w-full object-cover" />
+  </div>
 </section>
+</section>
+
+<!-- Default -->
+<SectionDivider />
+
+<!-- INSPIRATION -->
+ <section class="pt-10 mx-10 md:mx-20">
+
+	<div class="grid grid-cols-1 md:grid-cols-2 md:pb-10">
+<Heading style="h2">inspiration</Heading>
+<div class="flex flex-col justify-start md:justify-center">
+<Text>Take a look at some of the submissions from <br> the past for inspiration:</Text>
+</div>
+</div>
+
+<!-- SCROLL -->
+<div class="overflow-x-auto pb-5 md:pb-15">
+  <div class="flex gap-4 w-max items-end">
+    <img src="/10-amager-strand-vandbad-menu.png" alt="" class="rounded-lg flex-shrink-0 h-50 md:h-100 w-auto" />
+    <img src="/08-karlstrup_kalkgrav_kaffe_08-2025.png" alt="" class="rounded-lg flex-shrink-0 h-50 md:h-100 w-auto" />
+    <img src="/07-orestad-sort-hvid-inspiration.png" alt="" class="rounded-lg flex-shrink-0 h-50 md:h-100 w-auto" />
+    <img src="/15-ukendt-motiv-pripps-blaa-inspiration.png" alt="" class="rounded-lg flex-shrink-0 h-50 md:h-100 w-auto" />
+  <img src="/10-amager-strand-vandbad-menu.png" alt="" class="rounded-lg flex-shrink-0 h-50 md:h-100 w-auto" />
+    <img src="/08-karlstrup_kalkgrav_kaffe_08-2025.png" alt="" class="rounded-lg flex-shrink-0 h-50 md:h-100 w-auto" />
+    <img src="/07-orestad-sort-hvid-inspiration.png" alt="" class="rounded-lg flex-shrink-0 h-50 md:h-100 w-auto" />
+    <img src="/15-ukendt-motiv-pripps-blaa-inspiration.png" alt="" class="rounded-lg flex-shrink-0 h-50 md:h-100 w-auto" />
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 md:gap-10">
+	<div>
+	<Text>
+		You can also get a lot of inspiration from the art Photography scene. <br><br>
+Dan Isaac Wallin is a swedish art photographer, who uses large format and vintage polaroid cameras for his work. His work hangs in numerous houses as posters. [https://www.danisaacwallin.com/] <br><br>
+Mette Kelter is a danish art photographer, who often experiments with deliberate destruction of the chemical process in instant photos. 
+	</Text>
+	</div>
+	<div>
+		<Text>One of the key words here is unpredictability in the work process, which leads to interesting and unique artworks. [https://www.kelterphotography.com/] <br><br>
+
+Maripol is a french artist/photographer/film producer. Her claim to fame was in the 1980’s, where she photographed famous people with a Polaroid SX-70. Her photographs are still very influential in the fashion industry. [https://en.wikipedia.org/wiki/Maripol] </Text>
+	</div>
+</div>
+
+
+
+</section>
+
 
 </MainLayout>
