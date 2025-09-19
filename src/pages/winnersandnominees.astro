@@ -1,0 +1,118 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.png";
+import Text from "../components/Text.astro";
+import HowToCard from "../components/HowToCard.astro";
+import SectionDivider from "../components/SectionDivider.astro";
+import Heading from "../components/Heading.astro";
+---
+
+<MainLayout title="Titel">
+  <section class="p-4 sm:p-8">
+    <Heading stylingclasses="text-left"><span class="italic">winners</span> and nominees</Heading>
+
+    <p>Instant Day was quite a success in 2024, with more than 30 contributions. So it was difficult to find a winner. After a couple of long but exciting days, the judges agreed on the winner and the 3 nominees.</p>
+  </section>
+  <SectionDivider />
+
+  <section class="p-4 sm:p-8 grid grid-cols-12">
+    <div class="col-span-12">
+      <Heading stylingclasses="text-left"><span class="italic">winner 2024</span></Heading>
+    </div>
+
+    <div class="col-span-8 col-start-3">
+      <img src="Group30-winner-10-amager-strand-vandbad.png" alt="winner polaroid 2024" class="w-full" />
+    </div>
+
+    <div class="col-span-12 grid grid-cols-12">
+      <div class="col-span-5">
+        <Heading style="h3">submitter</Heading>
+      </div>
+
+      <p class="col-span-7 p-3 font-bold mt-1">Stefan Grage</p>
+    </div>
+
+    <div class="col-span-12 grid grid-cols-12">
+      <div class="col-span-5 pr-6">
+        <Heading style="h3">description/story</Heading>
+      </div>
+
+      <p class="col-span-7 p-3 pr-8">A little snap from Amager Fælled, a large common in the southwestern part of Copenhagen, Denmark. Taken with a Lomomatic Square.</p>
+    </div>
+  </section>
+
+  <SectionDivider flipped={true} />
+
+  <!-- Main section with centered layout -->
+  <section class="p-4 sm:p-8 flex flex-col items-center min-h-screen">
+    <!-- Heading section -->
+    <Heading stylingclasses="text-4xl font-bold text-left w-full mb-8">
+      <span class="italic">NOMINEES 2024</span>
+    </Heading>
+
+    <!-- Container for image groups -->
+    <div class="space-y-12 md:space-y-0 md:flex md:flex-row md:space-x-12 md:justify-center">
+      <!-- First image group -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/Group29-nominee1-amager-strand-nat.png" alt="Amager Strand" class="w-64" />
+        <p class="font-bold mt-1 text-gray-700">Stefan Grage</p>
+        <p class="mt-2 text-sm max-w-xs text-gray-600">From this angle, copenhagen looks like a big city. Taken with a Polaroid Now+ gen 2, with a yellow tint filter.</p>
+      </div>
+
+      <!-- Second image group -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/Group32-nominee2-new-meets-old.png" alt="Ørestad" class="w-64" />
+
+        <p class="font-bold mt-1 text-gray-700">Stefan Grage</p>
+        <p class="mt-2 text-sm max-w-xs text-gray-600">
+          I wanted to catch the new city development district, Ørestad, in a shade of old school. So I used a Polaroid Now+ gen 2 in tripod mode with an i-Type black and white film in order to make a long exposure.
+        </p>
+      </div>
+
+      <!-- Third image group -->
+      <div class="flex flex-col items-center text-center">
+        <img src="/Group33-nominee3-beer-beach.png" alt="Løserup Strand" class="w-64" />
+
+        <p class="font-bold mt-1 text-gray-700">Stefan Grage</p>
+        <p class="mt-2 text-sm max-w-xs text-gray-600">
+          Løserup strand in Holbæk. I often go there to quelch beer. So I wanted to give this polaroid a twist of beer: The polaroid soaked for around three weeks in Pripps blå - a cheap, swedish beer. I used a Polaroid Flip and expired film.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="p-4 sm:p-8">
+    <Heading stylingclasses="text-left"><span class="italic">nominees 2024</span></Heading>
+    <div>
+      <div class="justify-center">
+        <div class="flex items-center justify-center">
+          <img src="Group29-nominee1-amager-strand-nat.png" alt="" />
+        </div>
+        <p>Stefan Grage</p>
+        <br />
+        <p>_______________________</p>
+        <p>From this angle, copenhagen looks like a big city. Taken with a Polaroid Now+ gen 2, with a yellow tint filter.</p>
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="Group32-nominee2-new-meets-old.png" alt="" />
+      </div>
+      <p>Stefan Grage</p>
+      <br />
+      <p>_______________________</p>
+      <p>I wanted to catch the new city development district, Ørestad, in a shade of old school. So I used a Polaroid Now+ gen 2 in tripod mode with an i-Type black and white film in order to make a long exposure.</p>
+
+      <div>
+        <div class="flex items-center justify-center">
+          <img src="Group33-nominee3-beer-beach.png" alt="" />
+        </div>
+        <p>Stefan Grage</p>
+        <br />
+        <p>_______________________</p>
+        <p>Løserup strand in Holbæk. I often go there to quelch beer. So I wanted to give this polaroid a twist of beer: The polaroid soaked for around three weeks in Pripps blå - a cheap, swedish beer. I used a Polaroid Flip and expired film.</p>
+      </div>
+    </div>
+  </section> -->
+</MainLayout>

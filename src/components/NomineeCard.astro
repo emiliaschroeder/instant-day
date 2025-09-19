@@ -1,0 +1,39 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.png";
+import Text from "../components/Text.astro";
+import Heading from "../components/Heading.astro";
+
+import SectionDivider from "../components/SectionDivider.astro";
+---
+
+<SectionDivider flipped={true} />
+
+<section>
+  <Heading stylingclasses="text-right"><span class="italic">nominees 2024</span></Heading>
+  <div>
+    <div>
+      <img src="Group29-nominee1-amager-strand-nat.png" alt="" />
+      <p>Stefan Grage</p>
+      <br />
+      <p>_______________________</p>
+      <p>From this angle, copenhagen looks like a big city. Taken with a Polaroid Now+ gen 2, with a yellow tint filter.</p>
+    </div>
+    <img src="Group32-nominee2-new-meets-old.png" alt="" />
+    <p>Stefan Grage</p>
+    <br />
+    <p>_______________________</p>
+    <p>I wanted to catch the new city development district, Ørestad, in a shade of old school. So I used a Polaroid Now+ gen 2 in tripod mode with an i-Type black and white film in order to make a long exposure.</p>
+
+    <div>
+      <img src="Group33-nominee3-beer-beach.png" alt="" />
+      <p>Stefan Grage</p>
+      <br />
+      <p>_______________________</p>
+      <p>Løserup strand in Holbæk. I often go there to quelch beer. So I wanted to give this polaroid a twist of beer: The polaroid soaked for around three weeks in Pripps blå - a cheap, swedish beer. I used a Polaroid Flip and expired film.</p>
+    </div>
+  </div>
+</section>
